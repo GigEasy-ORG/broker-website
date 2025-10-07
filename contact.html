@@ -77,9 +77,6 @@
       >Developers</a
      >
      <a href="contact.html" class="text-primary font-medium">Contact Us</a>
-     <a href="#" class="text-gray-700 hover:text-primary font-medium"
-      >Licensing</a
-     >
     </div>
     <div class="flex items-center">
      <a
@@ -110,19 +107,7 @@
 
       <!-- Contact Form -->
       <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
-       <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        class="space-y-6"
-       >
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden">
-         <label
-          >Don't fill this out if you're human: <input name="bot-field"
-         /></label>
-        </p>
+       <form id="contact-form" class="space-y-6">
         <div class="grid md:grid-cols-2 gap-6">
          <div>
           <label
@@ -321,9 +306,7 @@
        class="text-gray-600 hover:text-primary cursor-pointer"
        >Contact Us</a
       >
-      <a href="#" class="text-gray-600 hover:text-primary cursor-pointer"
-       >Licensing</a
-      >
+
       <a href="#" class="text-gray-600 hover:text-primary cursor-pointer"
        >Terms</a
       >
@@ -340,5 +323,78 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+   // Contact Form Handler
+   document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contact-form");
+
+    contactForm.addEventListener("submit", async function (e) {
+     e.preventDefault();
+
+     // Get form data
+     const formData = new FormData(contactForm);
+     const data = {
+      fullName: formData.get("fullName"),
+      email: formData.get("email"),
+      company: formData.get("company"),
+      role: formData.get("role"),
+      message: formData.get("message"),
+     };
+
+     // Show loading state
+     const submitButton = contactForm.querySelector('button[type="submit"]');
+     const originalText = submitButton.textContent;
+     submitButton.textContent = "Sending...";
+     submitButton.disabled = true;
+
+     try {
+      // Send to Google Apps Script
+      const response = await fetch(
+       "https://script.google.com/macros/s/AKfycbzeYryXggD-x_dFbjZKrSLTcd12SD5zaqSdcG9G3EnIic33vOMoxElUF3Gkj5f7O8OO/exec",
+       {
+        method: "POST",
+        headers: {
+         "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+       }
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+       // Success message
+       submitButton.textContent = "Message Sent!";
+       submitButton.classList.remove("bg-primary");
+       submitButton.classList.add("bg-green-500");
+       contactForm.reset();
+
+       // Reset button after 3 seconds
+       setTimeout(() => {
+        submitButton.textContent = originalText;
+        submitButton.classList.remove("bg-green-500");
+        submitButton.classList.add("bg-primary");
+        submitButton.disabled = false;
+       }, 3000);
+      } else {
+       throw new Error(result.error || "Failed to send message");
+      }
+     } catch (error) {
+      console.error("Error:", error);
+      submitButton.textContent = "Error - Try Again";
+      submitButton.classList.remove("bg-primary");
+      submitButton.classList.add("bg-red-500");
+
+      // Reset button after 3 seconds
+      setTimeout(() => {
+       submitButton.textContent = originalText;
+       submitButton.classList.remove("bg-red-500");
+       submitButton.classList.add("bg-primary");
+       submitButton.disabled = false;
+      }, 3000);
+     }
+    });
+   });
+  </script>
  </body>
 </html>
