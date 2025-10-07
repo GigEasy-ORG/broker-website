@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
    "mobile-menu hidden md:hidden bg-white border-t border-gray-200 absolute top-full left-0 right-0 shadow-lg z-40";
   mobileMenu.innerHTML = `
             <div class="px-6 py-4 space-y-4">
-                <a href="index.html" class="block text-gray-700 hover:text-primary font-medium py-2">Home</a>
+                <a href="/" class="block text-gray-700 hover:text-primary font-medium py-2">Home</a>
                 <a href="brokers.html" class="block text-gray-700 hover:text-primary font-medium py-2">Brokers</a>
                 <a href="developers.html" class="block text-gray-700 hover:text-primary font-medium py-2">Developers</a>
                 <a href="contact.html" class="block text-gray-700 hover:text-primary font-medium py-2">Contact Us</a>

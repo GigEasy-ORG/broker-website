@@ -14,7 +14,7 @@ A modern, responsive website for GigEasy, an AI-powered insurance platform desig
 
 ```
 broker/
-├── index.html          # Home page
+├── /          # Home page
 ├── brokers.html        # Brokers landing page
 ├── developers.html     # Developers/API page
 ├── contact.html        # Contact page
@@ -24,7 +24,7 @@ broker/
 
 ## 🎨 Pages Overview
 
-### 1. Home Page (`index.html`)
+### 1. Home Page (`/`)
 
 - Hero section with AI-powered insurance messaging
 - Carrier logos and partnerships
