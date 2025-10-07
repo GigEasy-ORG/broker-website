@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GigEasy - AI-Powered Insurance for Brokers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+   window.FontAwesomeConfig = { autoReplaceSvg: "nest" };
+  </script>
+  <script
+   src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+   crossorigin="anonymous"
+   referrerpolicy="no-referrer"
+  ></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+   rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+  />
+
+  <style>
+   ::-webkit-scrollbar {
+    display: none;
+   }
+   html,
+   body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+   }
+   body {
+    font-family: "Inter", sans-serif !important;
+   }
+   .fa,
+   .fas,
+   .far,
+   .fal,
+   .fab {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+   }
+  </style>
+
+  <script>
+   tailwind.config = {
+    theme: {
+     extend: {
+      colors: {
+       primary: "#2E5BFF",
+       secondary: "#F8FAFC",
+      },
+      fontFamily: {
+       sans: ["Inter", "sans-serif"],
+      },
+     },
+    },
+   };
+  </script>
+ </head>
+ <body class="bg-white font-custom">
+  <!-- Header -->
+  <nav id="header" class="bg-white py-4 shadow-sm fixed w-full top-0 z-50">
+   <div class="container mx-auto px-6 flex justify-between items-center">
+    <div class="flex items-center">
+     <a href="index.html" class="text-2xl font-bold text-gray-900"> GigEasy </a>
+    </div>
+    <div class="hidden md:flex items-center space-x-8">
+     <a href="index.html" class="text-gray-700 hover:text-primary font-medium"
+      >Home</a
+     >
+     <a href="brokers.html" class="text-primary font-medium">Brokers</a>
+     <a
+      href="developers.html"
+      class="text-gray-700 hover:text-primary font-medium"
+      >Developers</a
+     >
+     <a href="contact.html" class="text-gray-700 hover:text-primary font-medium"
+      >Contact Us</a
+     >
+    </div>
+    <div class="flex items-center">
+     <a
+      href="https://cal.com/rilwan-lawal-zgrq5z/gigeasy-access"
+      target="_blank"
+      rel="noopener noreferrer"
+     >
+      <button
+       class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+      >
+       Get Early Access
+      </button>
+     </a>
+    </div>
+   </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section
+   id="hero-section"
+   class="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white"
+  >
+   <div class="container mx-auto px-6">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+     <div class="lg:w-1/2" data-aos="fade-up-right" data-aos-duration="1500">
+      <h1
+       class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+      >
+       Upgrade Your Brokerage AI-Powered Insurance
+      </h1>
+      <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+       Quote, bind, and manage policies in minutes — no new staff required.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+       <a
+        href="https://cal.com/rilwan-lawal-zgrq5z/gigeasy-access"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition inline-block text-center"
+       >
+        Get a Demo
+       </a>
+       <a
+        href="https://cal.com/rilwan-lawal-zgrq5z/gigeasy-access"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 transition inline-block text-center"
+       >
+        Start Today
+       </a>
+      </div>
+     </div>
+     <div class="lg:w-1/2" data-aos="fade-left" data-aos-duration="1500">
+      <div class="bg-white rounded-2xl shadow-2xl p-6 max-w-md mx-auto">
+       <div class="flex items-center mb-4">
+        <div
+         class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3"
+        >
+         <i class="fa-solid fa-robot text-white"></i>
+        </div>
+        <div>
+         <div class="font-semibold">GigEasy AI</div>
+         <div class="text-sm text-gray-500">Insurance Agent</div>
+        </div>
+       </div>
+       <div class="space-y-4">
+        <div class="bg-gray-100 rounded-lg p-3">
+         <p class="text-sm">
+          Need GL coverage for a construction company, 50 employees.
+         </p>
+        </div>
+        <div class="bg-primary text-white rounded-lg p-3">
+         <p class="text-sm mb-2">Found 3 carriers willing to quote.</p>
+         <p class="text-sm mb-3">Best: $2,499/year from Liberty Mutual.</p>
+         <div class="flex gap-2">
+          <a
+           href="https://cal.com/rilwan-lawal-zgrq5z/gigeasy-access"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="bg-white text-primary px-3 py-1 rounded font-semibold text-sm inline-block text-center"
+          >
+           Quote Ready
+          </a>
+          <a
+           href="https://cal.com/rilwan-lawal-zgrq5z/gigeasy-access"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="bg-green-500 text-white px-3 py-1 rounded font-semibold text-sm inline-block text-center"
+          >
+           View Now
+          </a>
+         </div>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-lg p-3">
+         <div class="flex items-center">
+          <i class="fa-solid fa-check-circle text-green-600 mr-2"></i>
+          <span class="text-sm text-green-800"
+           >Policy Issued Successfully. Certificate ready for download.</span
+          >
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- Carrier Logos -->
+  <section id="carrier-logos" class="py-12 bg-gray-50">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-8">
+     <h2 class="text-2xl font-bold text-gray-900 mb-2">
+      Backed by Leading Insurance Carriers
+     </h2>
+     <p class="text-gray-600">
+      15+ carriers integrated — with more added every month
+     </p>
+    </div>
+    <div class="flex flex-wrap justify-center items-center gap-8 opacity-60">
+     <img
+      class="h-8 object-contain"
+      src="assets/travelers.png"
+      alt="Travelers insurance company logo"
+     />
+     <img
+      class="h-8 object-contain"
+      src="assets/employers.png"
+      alt="Employers insurance company logo"
+     />
+     <img
+      class="h-8 object-contain"
+      src="assets/liberty.png"
+      alt="Liberty Mutual insurance logo"
+     />
+     <img
+      class="h-8 object-contain"
+      src="assets/pie.png"
+      alt="Pie insurance company logo"
+     />
+     <img
+      class="h-8 object-contain"
+      src="assets/markel.png"
+      alt="Markel insurance company logo"
+     />
+     <img
+      class="h-8 object-contain"
+      src="assets/cna.png"
+      alt="CNA insurance company logo"
+     />
+     <img
+      class="h-8 object-contain"
+      src="assets/hiscox.png"
+      alt="Hiscox insurance company logo"
+     />
+     <div class="text-gray-500 font-medium">+ Many More</div>
+    </div>
+   </div>
+  </section>
+
+  <!-- Why Brokers Choose GigEasy -->
+  <section id="value-proposition" class="py-20 bg-white">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      Why Brokers Choose GigEasy
+     </h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+     <div
+      class="bg-white rounded-xl p-8 shadow-lg border border-gray-100"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+     >
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+      >
+       <i class="fa-solid fa-search text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">Appetite Checker</h3>
+      <p class="text-gray-600">
+       Instantly see which carriers will quote your client.
+      </p>
+     </div>
+     <div
+      class="bg-white rounded-xl p-8 shadow-lg border border-gray-100"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="150"
+     >
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+      >
+       <i class="fa-solid fa-bolt text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">Faster Binds</h3>
+      <p class="text-gray-600">
+       Close deals up to 5x faster than legacy systems.
+      </p>
+     </div>
+     <div
+      class="bg-white rounded-xl p-8 shadow-lg border border-gray-100"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="250"
+     >
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+      >
+       <i class="fa-solid fa-shield-alt text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">
+       Compliance Automated
+      </h3>
+      <p class="text-gray-600">Built-in compliance errors by 90%.</p>
+     </div>
+     <div
+      class="bg-white rounded-xl p-8 shadow-lg border border-gray-100"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="350"
+     >
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+      >
+       <i class="fa-solid fa-robot text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">
+       AI Agents Do the Work
+      </h3>
+      <p class="text-gray-600">
+       Save 8+ hours per client on intake and processing.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- Coverage Section -->
+  <section id="coverage-section" class="py-20 bg-gray-50">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      Coverage That Fits Every Business
+     </h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+     <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up">
+      <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+       Business Protection
+      </h3>
+      <ul class="space-y-4">
+       <li class="flex items-center">
+        <i class="fa-solid fa-check text-primary mr-3"></i>
+        <span class="text-gray-700">General Liability</span>
+       </li>
+       <li class="flex items-center">
+        <i class="fa-solid fa-check text-primary mr-3"></i>
+        <span class="text-gray-700">Workers Compensation</span>
+       </li>
+       <li class="flex items-center">
+        <i class="fa-solid fa-check text-primary mr-3"></i>
+        <span class="text-gray-700">Business Owners Policy (BOP)</span>
+       </li>
+       <li class="flex items-center">
+        <i class="fa-solid fa-check text-primary mr-3"></i>
+        <span class="text-gray-700">Commercial Auto</span>
+       </li>
+       <li class="flex items-center">
+        <i class="fa-solid fa-check text-primary mr-3"></i>
+        <span class="text-gray-700">Occupational Accident</span>
+       </li>
+      </ul>
+     </div>
+     <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up">
+      <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+       Worker Protection
+      </h3>
+      <ul class="space-y-4">
+       <li class="flex items-center">
+        <i class="fa-solid fa-check text-primary mr-3"></i>
+        <span class="text-gray-700">Health Insurance</span>
+       </li>
+       <li class="flex items-center">
+        <i class="fa-solid fa-check text-primary mr-3"></i>
+        <span class="text-gray-700">Dental Coverage</span>
+       </li>
+       <li class="flex items-center">
+        <i class="fa-solid fa-check text-primary mr-3"></i>
+        <span class="text-gray-700">Vision Insurance</span>
+       </li>
+       <li class="flex items-center">
+        <i class="fa-solid fa-check text-primary mr-3"></i>
+        <span class="text-gray-700">Life Insurance</span>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- Industries Section -->
+  <section id="industries-section" class="py-20 bg-white">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      Trusted Across Industries
+     </h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8">
+     <div class="text-center">
+      <div
+       class="w-16 h-16 bg-gray-50 rounded-xl shadow-md flex items-center justify-center mx-auto mb-4"
+      >
+       <i class="fa-solid fa-hard-hat text-2xl text-primary"></i>
+      </div>
+      <p class="text-sm font-medium text-gray-700">Construction</p>
+     </div>
+     <div class="text-center">
+      <div
+       class="w-16 h-16 bg-gray-50 rounded-xl shadow-md flex items-center justify-center mx-auto mb-4"
+      >
+       <i class="fa-solid fa-industry text-2xl text-primary"></i>
+      </div>
+      <p class="text-sm font-medium text-gray-700">Manufacturing</p>
+     </div>
+     <div class="text-center">
+      <div
+       class="w-16 h-16 bg-gray-50 rounded-xl shadow-md flex items-center justify-center mx-auto mb-4"
+      >
+       <i class="fa-solid fa-truck text-2xl text-primary"></i>
+      </div>
+      <p class="text-sm font-medium text-gray-700">Transportation</p>
+     </div>
+     <div class="text-center">
+      <div
+       class="w-16 h-16 bg-gray-50 rounded-xl shadow-md flex items-center justify-center mx-auto mb-4"
+      >
+       <i class="fa-solid fa-utensils text-2xl text-primary"></i>
+      </div>
+      <p class="text-sm font-medium text-gray-700">Hospitality</p>
+     </div>
+     <div class="text-center">
+      <div
+       class="w-16 h-16 bg-gray-50 rounded-xl shadow-md flex items-center justify-center mx-auto mb-4"
+      >
+       <i class="fa-solid fa-home text-2xl text-primary"></i>
+      </div>
+      <p class="text-sm font-medium text-gray-700">Home Services</p>
+     </div>
+     <div class="text-center">
+      <div
+       class="w-16 h-16 bg-gray-50 rounded-xl shadow-md flex items-center justify-center mx-auto mb-4"
+      >
+       <i class="fa-solid fa-warehouse text-2xl text-primary"></i>
+      </div>
+      <p class="text-sm font-medium text-gray-700">Warehousing</p>
+     </div>
+     <div class="text-center">
+      <div
+       class="w-16 h-16 bg-gray-50 rounded-xl shadow-md flex items-center justify-center mx-auto mb-4"
+      >
+       <i class="fa-solid fa-ellipsis-h text-2xl text-primary"></i>
+      </div>
+      <p class="text-sm font-medium text-gray-700">...and many more</p>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- ROI Section -->
+  <section id="roi-section" class="py-20 bg-gray-50">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      Do More With Less: ROI That Scales With Your Brokerage
+     </h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+     <div
+      class="bg-red-50 border border-red-200 rounded-xl p-8 hover:scale-105 cursor-pointer transition ease-in"
+     >
+      <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+       Old Way (Manual Broker Workflow)
+      </h3>
+      <ul class="space-y-4">
+       <li class="flex items-center">
+        <i class="fa-solid fa-times text-red-500 mr-3"></i>
+        <span class="text-gray-700">Hours wasted on intake & quoting</span>
+       </li>
+       <li class="flex items-center">
+        <i class="fa-solid fa-times text-red-500 mr-3"></i>
+        <span class="text-gray-700">Limited carrier access</span>
+       </li>
+       <li class="flex items-center">
+        <i class="fa-solid fa-times text-red-500 mr-3"></i>
+        <span class="text-gray-700">Manual compliance & paperwork</span>
+       </li>
+       <li class="flex items-center">
+        <i class="fa-solid fa-times text-red-500 mr-3"></i>
+        <span class="text-gray-700">Growth requires hiring new staff</span>
+       </li>
+      </ul>
+      <div class="mt-6 p-4 bg-red-100 rounded-lg">
+       <p class="text-red-800 font-semibold text-center">
+        Slow, costly, capped growth.
+       </p>
+      </div>
+     </div>
+     <div
+      class="bg-green-50 border border-green-200 rounded-xl p-8 hover:scale-105 cursor-pointer transition ease-in"
+     >
+      <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+       New Way (With GigEasy)
+      </h3>
+      <ul class="space-y-4">
+       <li class="flex items-center">
+        <i class="fa-solid fa-check text-green-500 mr-3"></i>
+        <span class="text-gray-700">Instant intake & appetite visibility</span>
+       </li>
+       <li class="flex items-center">
+        <i class="fa-solid fa-check text-green-500 mr-3"></i>
+        <span class="text-gray-700"
+         >15+ carriers integrated (and counting)</span
+        >
+       </li>
+       <li class="flex items-center">
+        <i class="fa-solid fa-check text-green-500 mr-3"></i>
+        <span class="text-gray-700">Compliance automated</span>
+       </li>
+       <li class="flex items-center">
+        <i class="fa-solid fa-check text-green-500 mr-3"></i>
+        <span class="text-gray-700">AI agents scale with your book</span>
+       </li>
+      </ul>
+      <div class="mt-6 p-4 bg-green-100 rounded-lg">
+       <p class="text-green-800 font-semibold text-center">
+        Save 8+ hours per client, close 30% more deals, and grow without adding
+        staff!
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- Support Section -->
+  <section id="support-section" class="py-20 bg-white">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-900 mb-4">We've Got Your Back</h2>
+     <p class="text-xl text-gray-600">
+      Dedicated onboarding, compliance-first support, and a broker success team
+      that ensures you hit the ground running.
+     </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+     <div class="bg-gray-50 rounded-xl p-8 text-center">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-6"
+      >
+       <i class="fa-solid fa-comments text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">
+       Live Chat Support
+      </h3>
+      <p class="text-gray-600">Get instant help when you need it.</p>
+     </div>
+     <div class="bg-gray-50 rounded-xl p-8 text-center">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-6"
+      >
+       <i class="fa-solid fa-user text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">
+       Dedicated Success Team
+      </h3>
+      <p class="text-gray-600">Personal guidance throughout your journey.</p>
+     </div>
+     <div class="bg-gray-50 rounded-xl p-8 text-center">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-6"
+      >
+       <i class="fa-solid fa-shield-alt text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">Compliance First</h3>
+      <p class="text-gray-600">Built with regulatory requirements in mind.</p>
+     </div>
+    </div>
+    <div class="text-center">
+     <div class="bg-primary rounded-xl p-8 text-white max-w-md mx-auto">
+      <div class="text-4xl font-bold mb-2">90%</div>
+      <div class="text-lg">
+       of brokers onboard and quote within their first week
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials-section" class="py-20 bg-gray-50">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      Trusted by Brokers Nationwide
+     </h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+     <div
+      class="bg-white rounded-xl p-8 shadow-lg"
+      data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom"
+     >
+      <div class="flex items-center mb-6">
+       <img
+        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg"
+        alt="Broker Avatar"
+        class="w-12 h-12 rounded-full mr-4"
+       />
+       <div>
+        <div class="font-semibold text-gray-900">Michael Chen</div>
+        <div class="text-sm text-gray-600">Independent Broker</div>
+       </div>
+      </div>
+      <p class="text-gray-700 italic">
+       "GigEasy saves me 3 hours on every new client — I can finally focus on
+       growth"
+      </p>
+     </div>
+     <div
+      class="bg-white rounded-xl p-8 shadow-lg"
+      data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom"
+      data-aos-delay="150"
+     >
+      <div class="flex items-center mb-6">
+       <img
+        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg"
+        alt="Broker Avatar"
+        class="w-12 h-12 rounded-full mr-4"
+       />
+       <div>
+        <div class="font-semibold text-gray-900">Sarah Chen</div>
+        <div class="text-sm text-gray-600">Agency Owner</div>
+       </div>
+      </div>
+      <p class="text-gray-700 italic">
+       "Finally, appetite checking is automated. No more chasing declines."
+      </p>
+     </div>
+     <div
+      class="bg-white rounded-xl p-8 shadow-lg"
+      data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom"
+     >
+      <div class="flex items-center mb-6">
+       <img
+        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-8.jpg"
+        alt="Broker Avatar"
+        class="w-12 h-12 rounded-full mr-4"
+       />
+       <div>
+        <div class="font-semibold text-gray-900">David Rodriguez</div>
+        <div class="text-sm text-gray-600">Regional Brokerage Partner</div>
+       </div>
+      </div>
+      <p class="text-gray-700 italic">
+       "Binding policies is instant now. My clients think I hired a full back
+       office."
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq-section" class="py-20 bg-white">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      Frequently Asked Questions
+     </h2>
+    </div>
+    <div class="max-w-3xl mx-auto">
+     <div class="space-y-4">
+      <div class="border border-gray-200 rounded-lg p-6 cursor-pointer">
+       <div class="flex justify-between items-center">
+        <h3 class="text-lg font-semibold text-gray-900">
+         How do I get paid commissions?
+        </h3>
+        <i
+         class="fa-solid fa-chevron-down text-gray-400 transition-transform"
+        ></i>
+       </div>
+       <div class="faq-content mt-4 text-gray-600" style="display: none">
+        <p>
+         Commissions are automatically calculated and paid out based on the
+         policies you write through GigEasy. You'll receive detailed commission
+         statements and payments according to your carrier agreements.
+        </p>
+       </div>
+      </div>
+      <div
+       class="border border-gray-200 rounded-lg p-6 cursor-pointer"
+       data-aos="fade-up"
+       data-aos-duration="1000"
+      >
+       <div class="flex justify-between items-center">
+        <h3 class="text-lg font-semibold text-gray-900">
+         Which carriers are supported?
+        </h3>
+        <i
+         class="fa-solid fa-chevron-down text-gray-400 transition-transform"
+        ></i>
+       </div>
+       <div class="faq-content mt-4 text-gray-600" style="display: none">
+        <p>
+         We integrate with 15+ leading insurance carriers including Travelers,
+         Hartford, Liberty Mutual, Progressive, Zurich, CNA, Chubb, and many
+         more. New carriers are added regularly.
+        </p>
+       </div>
+      </div>
+      <div
+       class="border border-gray-200 rounded-lg p-6 cursor-pointer"
+       data-aos="fade-up"
+       data-aos-duration="1000"
+       data-aos-delay="150"
+      >
+       <div class="flex justify-between items-center">
+        <h3 class="text-lg font-semibold text-gray-900">
+         Is this only for contractors?
+        </h3>
+        <i
+         class="fa-solid fa-chevron-down text-gray-400 transition-transform"
+        ></i>
+       </div>
+       <div class="faq-content mt-4 text-gray-600" style="display: none">
+        <p>
+         No! While we excel at contractor insurance, GigEasy serves all SMBs
+         across industries including construction, manufacturing,
+         transportation, hospitality, home services, warehousing, and more.
+        </p>
+       </div>
+      </div>
+      <div
+       class="border border-gray-200 rounded-lg p-6 cursor-pointer"
+       data-aos="fade-up"
+       data-aos-duration="1000"
+       data-aos-delay="250"
+      >
+       <div class="flex justify-between items-center">
+        <h3 class="text-lg font-semibold text-gray-900">
+         How quickly can I get started?
+        </h3>
+        <i
+         class="fa-solid fa-chevron-down text-gray-400 transition-transform"
+        ></i>
+       </div>
+       <div class="faq-content mt-4 text-gray-600" style="display: none">
+        <p>
+         Most brokers are up and running within their first week. Our dedicated
+         onboarding team provides personalized setup and training to ensure
+         you're successful from day one.
+        </p>
+       </div>
+      </div>
+      <div
+       class="border border-gray-200 rounded-lg p-6 cursor-pointer"
+       data-aos="fade-up"
+       data-aos-duration="1000"
+       data-aos-delay="350"
+      >
+       <div class="flex justify-between items-center">
+        <h3 class="text-lg font-semibold text-gray-900">
+         Do I need to change how I work with carriers?
+        </h3>
+        <i
+         class="fa-solid fa-chevron-down text-gray-400 transition-transform"
+        ></i>
+       </div>
+       <div class="faq-content mt-4 text-gray-600" style="display: none">
+        <p>
+         Not at all! GigEasy works with your existing carrier relationships. We
+         simply streamline the quoting and binding process while maintaining
+         your established partnerships and commission structures.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section id="cta-banner" class="py-16 bg-primary">
+   <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-white mb-4">
+     Grow Your Brokerage Without Adding Staff
+    </h2>
+    <p class="text-xl text-blue-100 mb-8">
+     AI agents handle the work so you can focus on selling.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+     <a
+      href="https://cal.com/rilwan-lawal-zgrq5z/gigeasy-access"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition inline-block text-center"
+     >
+      Request a Demo
+     </a>
+     <a
+      href="https://cal.com/rilwan-lawal-zgrq5z/gigeasy-access"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="border border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition inline-block text-center"
+     >
+      Get Started Today
+     </a>
+    </div>
+   </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-gray-900 text-white py-12">
+   <div class="container mx-auto px-6">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+     <div>
+      <div class="text-2xl font-bold mb-4">GigEasy</div>
+      <p class="text-gray-400">
+       AI-powered insurance platform for brokers and agencies.
+      </p>
+     </div>
+     <div>
+      <h3 class="font-semibold mb-4">Platform</h3>
+      <div class="space-y-2">
+       <div class="text-gray-400 hover:text-white cursor-pointer">
+        Broker Login
+       </div>
+       <div class="text-gray-400 hover:text-white cursor-pointer">About</div>
+       <div class="text-gray-400 hover:text-white cursor-pointer">Careers</div>
+      </div>
+     </div>
+     <div>
+      <h3 class="font-semibold mb-4">Support</h3>
+      <div class="space-y-2">
+       <div class="text-gray-400 hover:text-white cursor-pointer">Contact</div>
+       <div class="text-gray-400 hover:text-white cursor-pointer">
+        Licensing
+       </div>
+       <div class="text-gray-400 hover:text-white cursor-pointer">Terms</div>
+      </div>
+     </div>
+     <div>
+      <h3 class="font-semibold mb-4">Connect</h3>
+      <div class="flex space-x-4">
+       <span class="text-gray-400 hover:text-white cursor-pointer">
+        <i class="fa-brands fa-linkedin text-xl"></i>
+       </span>
+       <span class="text-gray-400 hover:text-white cursor-pointer">
+        <i class="fa-brands fa-twitter text-xl"></i>
+       </span>
+      </div>
+     </div>
+    </div>
+    <div
+     class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
+    >
+     <div class="text-gray-400 text-sm">
+      © 2024 GigEasy. All rights reserved.
+     </div>
+     <div class="text-gray-400 hover:text-white cursor-pointer text-sm">
+      Privacy Policy
+     </div>
+    </div>
+   </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+   AOS.init();
+  </script>
+ </body>
+</html>

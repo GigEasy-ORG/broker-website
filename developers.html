@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GigEasy API - Insurance APIs for Developers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+   window.FontAwesomeConfig = { autoReplaceSvg: "nest" };
+  </script>
+  <script
+   src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+   crossorigin="anonymous"
+   referrerpolicy="no-referrer"
+  ></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+   rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+  />
+
+  <style>
+   ::-webkit-scrollbar {
+    display: none;
+   }
+   html,
+   body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+   }
+   body {
+    font-family: "Inter", sans-serif !important;
+   }
+   .fa,
+   .fas,
+   .far,
+   .fal,
+   .fab {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+   }
+   .code-block {
+    background: #1a1a1a;
+    color: #e6e6e6;
+   }
+  </style>
+
+  <script>
+   tailwind.config = {
+    theme: {
+     extend: {
+      colors: {
+       primary: "#2E5BFF",
+       secondary: "#F8FAFC",
+      },
+      fontFamily: {
+       sans: ["Inter", "sans-serif"],
+      },
+     },
+    },
+   };
+  </script>
+ </head>
+ <body class="bg-white font-custom">
+  <!-- Header -->
+  <nav id="header" class="bg-white py-4 shadow-sm fixed w-full top-0 z-50">
+   <div class="container mx-auto px-6 flex justify-between items-center">
+    <div class="flex items-center">
+     <a href="index.html" class="text-2xl font-bold text-gray-900"> GigEasy </a>
+    </div>
+    <div class="hidden md:flex items-center space-x-8">
+     <a href="index.html" class="text-gray-700 hover:text-primary font-medium"
+      >Home</a
+     >
+     <a href="brokers.html" class="text-gray-700 hover:text-primary font-medium"
+      >Brokers</a
+     >
+     <a href="developers.html" class="text-primary font-medium">Developers</a>
+     <a href="contact.html" class="text-gray-700 hover:text-primary font-medium"
+      >Contact Us</a
+     >
+    </div>
+    <div class="flex items-center">
+     <button
+      id="join-waitlist-header"
+      class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+     >
+      Join the Waitlist
+     </button>
+    </div>
+   </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section
+   id="hero-section"
+   class="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white"
+  >
+   <div class="container mx-auto px-6">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+     <div class="lg:w-1/2">
+      <h1
+       class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+      >
+       Integrate Insurance Into Any Workflow With GigEasy's API
+      </h1>
+      <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+       Embed quoting, binding, and compliance checks directly into your
+       platform. Built for developers, trusted by enterprises.
+      </p>
+      <button
+       id="join-waitlist-hero"
+       class="bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition"
+      >
+       Join the Waitlist
+      </button>
+     </div>
+     <div class="lg:w-1/2">
+      <div class="space-y-4">
+       <div class="code-block rounded-xl p-6 font-mono text-sm">
+        <div class="text-blue-400 mb-2">POST /api/quotes</div>
+        <div class="text-gray-400">
+         {<br />
+         &nbsp;&nbsp;"industry": "construction",<br />
+         &nbsp;&nbsp;"revenue": 500000,<br />
+         &nbsp;&nbsp;"employees": 15<br />
+         }
+        </div>
+       </div>
+       <div class="bg-white rounded-xl shadow-lg p-6">
+        <h3 class="font-semibold text-gray-900 mb-4">Instant Quote Results</h3>
+        <div class="flex items-center mb-3">
+         <i class="fa-solid fa-check-circle text-green-500 mr-2"></i>
+         <span class="text-sm text-gray-700">3 quotes ready</span>
+        </div>
+        <div class="space-y-2">
+         <div class="text-sm text-gray-600">General Liability $50/mo</div>
+         <div class="text-sm text-gray-600">Workers' Comp $150/mo</div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features-section" class="py-20 bg-white">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      Simple, Scalable, Secure
+     </h2>
+     <p class="text-xl text-gray-600">
+      Why developers choose GigEasy for insurance integrations
+     </p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+     <div class="bg-gray-50 rounded-xl p-8">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+      >
+       <i class="fa-solid fa-code text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">Clean REST API</h3>
+      <p class="text-gray-600">
+       Easy to integrate with modern stacks, RESTful endpoints with
+       comprehensive documentation.
+      </p>
+     </div>
+     <div class="bg-gray-50 rounded-xl p-8">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+      >
+       <i class="fa-solid fa-asterisk text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">
+       Embeddable Workflows
+      </h3>
+      <p class="text-gray-600">
+       Drop-in quote and bind modules that seamlessly integrate into your
+       existing UI.
+      </p>
+     </div>
+     <div class="bg-gray-50 rounded-xl p-8">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+      >
+       <i class="fa-solid fa-shield-alt text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">
+       Compliance Built-In
+      </h3>
+      <p class="text-gray-600">
+       Licensing, appetite, and risk assessment handled automatically across all
+       states.
+      </p>
+     </div>
+     <div class="bg-gray-50 rounded-xl p-8">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+      >
+       <i class="fa-solid fa-chart-line text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">
+       Scales With Your Platform
+      </h3>
+      <p class="text-gray-600">
+       Flexible, high-volume ready infrastructure that grows with your business
+       needs.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- Workflow Section -->
+  <section id="workflow-section" class="py-20 bg-gray-50">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      From Request to Policy in Minutes
+     </h2>
+     <p class="text-xl text-gray-600">
+      See how our API streamlines the entire insurance workflow
+     </p>
+    </div>
+    <div class="space-y-16">
+     <!-- Step 1 -->
+     <div class="flex flex-col lg:flex-row items-center gap-12">
+      <div class="lg:w-1/2">
+       <h3 class="text-2xl font-bold text-gray-900 mb-4">
+        1. Submit Client Details
+       </h3>
+       <p class="text-gray-600 mb-6">
+        Send business information through our API endpoint. Our system instantly
+        processes industry, revenue, employee count, and location data.
+       </p>
+       <div class="code-block rounded-xl p-6 font-mono text-sm">
+        <div class="text-blue-400 mb-2">POST /api/quotes</div>
+        <div class="text-gray-400">Content-Type: application/json</div>
+       </div>
+      </div>
+      <div class="lg:w-1/2">
+       <div class="space-y-4">
+        <div class="bg-white rounded-lg p-4">
+         <div class="flex items-center mb-2">
+          <div
+           class="w-2 h-2 bg-gray-400 rounded-full animate-pulse mr-2"
+          ></div>
+          <span class="text-sm text-gray-600">Processing request...</span>
+         </div>
+         <div class="space-y-2">
+          <div class="h-2 bg-gray-200 rounded w-3/4"></div>
+          <div class="h-2 bg-gray-200 rounded w-1/2"></div>
+         </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-6">
+         <h4 class="font-semibold text-gray-900 mb-3">Available Quotes</h4>
+         <div class="text-sm text-gray-600 mb-3">3 quotes</div>
+         <div class="space-y-2">
+          <div class="text-sm">
+           Carrier A General Liability + Workers' Comp $3,500/mo
+          </div>
+          <div class="text-sm">
+           Carrier B General Liability + Workers' Comp $2,900/mo
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+
+     <!-- Step 2 -->
+     <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+      <div class="lg:w-1/2">
+       <h3 class="text-2xl font-bold text-gray-900 mb-4">
+        2. Receive Appetite + Quotes
+       </h3>
+       <p class="text-gray-600 mb-6">
+        Get instant carrier appetite matching and competitive quotes. Our AI
+        evaluates risk profiles and returns the best available options.
+       </p>
+       <div class="code-block rounded-xl p-6 font-mono text-sm">
+        <div class="text-blue-400 mb-2">POST /api/quotes</div>
+        <div class="text-gray-400">
+         {<br />
+         &nbsp;&nbsp;"quotes": [10, "carriers": [...]<br />
+         }
+        </div>
+       </div>
+      </div>
+      <div class="lg:w-1/2">
+       <div class="bg-white rounded-lg p-4">
+        <div class="flex items-center mb-2">
+         <div class="w-2 h-2 bg-gray-400 rounded-full animate-pulse mr-2"></div>
+         <span class="text-sm text-gray-600">Processing request...</span>
+        </div>
+        <div class="space-y-2">
+         <div class="h-2 bg-gray-200 rounded w-2/3"></div>
+         <div class="h-2 bg-gray-200 rounded w-4/5"></div>
+        </div>
+       </div>
+      </div>
+     </div>
+
+     <!-- Step 3 -->
+     <div class="flex flex-col lg:flex-row items-center gap-12">
+      <div class="lg:w-1/2">
+       <h3 class="text-2xl font-bold text-gray-900 mb-4">
+        3. Bind & Receive Policy
+       </h3>
+       <p class="text-gray-600 mb-6">
+        Complete the binding process with a single API call. Receive policy ID,
+        certificate of insurance, and all documentation instantly.
+       </p>
+       <div class="code-block rounded-xl p-6 font-mono text-sm">
+        <div class="text-blue-400 mb-2">POST /api/bind</div>
+        <div class="text-gray-400">
+         {<br />
+         &nbsp;&nbsp;"quote_id": "q_12345"<br />
+         }
+        </div>
+       </div>
+      </div>
+      <div class="lg:w-1/2">
+       <div class="bg-white rounded-xl shadow-lg p-6">
+        <div class="flex items-center mb-4">
+         <span
+          class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold"
+          >ACTIVE</span
+         >
+        </div>
+        <h4 class="font-semibold text-gray-900 mb-2">Policy Issued</h4>
+        <div class="space-y-2 text-sm text-gray-600">
+         <div>Policy ID POL-2024-901234</div>
+         <div>Effective Date Jan 15, 2024</div>
+        </div>
+        <a
+         href="#"
+         class="inline-block mt-4 text-primary hover:text-blue-700 text-sm font-semibold"
+         >Download PDF</a
+        >
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- Integration Scenarios -->
+  <section id="integration-section" class="py-20 bg-white">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      Build Insurance Into Your Product
+     </h2>
+     <p class="text-xl text-gray-600">
+      Flexible APIs for every integration scenario
+     </p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+     <div class="bg-gray-50 rounded-xl p-8">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+      >
+       <i class="fa-solid fa-code text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">Broker Platforms</h3>
+      <p class="text-gray-600">
+       Automate appetite matching and quoting workflows for insurance brokers
+       and agencies.
+      </p>
+     </div>
+     <div class="bg-gray-50 rounded-xl p-8">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+      >
+       <i class="fa-solid fa-building text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">SMB SaaS Tools</h3>
+      <p class="text-gray-600">
+       Add embedded insurance solutions to payroll, HR, and business management
+       platforms.
+      </p>
+     </div>
+     <div class="bg-gray-50 rounded-xl p-8">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+      >
+       <i class="fa-solid fa-shopping-cart text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">Marketplaces</h3>
+      <p class="text-gray-600">
+       Offer contractor and gig worker coverage during onboarding and
+       verification processes.
+      </p>
+     </div>
+     <div class="bg-gray-50 rounded-xl p-8">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+      >
+       <i class="fa-solid fa-star text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">Custom Apps</h3>
+      <p class="text-gray-600">
+       Tailored compliance-first integrations for industry-specific
+       applications.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- Developer Features -->
+  <section id="dev-features-section" class="py-20 bg-gray-50">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      Developer-First Features
+     </h2>
+     <p class="text-xl text-gray-600">
+      Everything you need to build and scale insurance integrations
+     </p>
+    </div>
+    <div class="flex flex-col lg:flex-row items-center gap-16">
+     <div class="lg:w-1/2">
+      <div class="space-y-8">
+       <div class="flex items-start">
+        <div
+         class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1"
+        >
+         <i class="fa-solid fa-check text-white text-xs"></i>
+        </div>
+        <div>
+         <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          REST + GraphQL Support
+         </h3>
+         <p class="text-gray-600">
+          Choose your preferred API style with full feature parity across both
+          interfaces.
+         </p>
+        </div>
+       </div>
+       <div class="flex items-start">
+        <div
+         class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1"
+        >
+         <i class="fa-solid fa-check text-white text-xs"></i>
+        </div>
+        <div>
+         <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Secure OAuth & API Keys
+         </h3>
+         <p class="text-gray-600">
+          Enterprise-grade authorization with fine-grained permission controls.
+         </p>
+        </div>
+       </div>
+       <div class="flex items-start">
+        <div
+         class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1"
+        >
+         <i class="fa-solid fa-check text-white text-xs"></i>
+        </div>
+        <div>
+         <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Webhooks + Event Architecture
+         </h3>
+         <p class="text-gray-600">
+          Real-time notifications for policy changes, renewals, and claims
+          updates.
+         </p>
+        </div>
+       </div>
+       <div class="flex items-start">
+        <div
+         class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1"
+        >
+         <i class="fa-solid fa-check text-white text-xs"></i>
+        </div>
+        <div>
+         <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Sandbox Testing Environment
+         </h3>
+         <p class="text-gray-600">
+          Full-featured testing environment with mock data and realistic
+          responses.
+         </p>
+        </div>
+       </div>
+       <div class="flex items-start">
+        <div
+         class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1"
+        >
+         <i class="fa-solid fa-check text-white text-xs"></i>
+        </div>
+        <div>
+         <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          SDKs for Common Stacks
+         </h3>
+         <p class="text-gray-600">
+          Native SDKs for Node.js, Python, PHP, and more coming soon.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="lg:w-1/2">
+      <div class="code-block rounded-xl p-6 font-mono text-sm">
+       <div class="text-blue-400 mb-4">// Initialize GigEasy</div>
+       <div class="text-gray-400 mb-2">const gigeasy = new GigEasy({</div>
+       <div class="text-gray-400 mb-2">&nbsp;&nbsp;apiKey: 'your-api-key',</div>
+       <div class="text-gray-400 mb-2">&nbsp;&nbsp;environment: 'sandbox'</div>
+       <div class="text-gray-400 mb-4">});</div>
+       <div class="text-blue-400 mb-4">// Get quotes</div>
+       <div class="text-gray-400 mb-2">
+        const quotes = await gigeasy.quotes.create({
+       </div>
+       <div class="text-gray-400 mb-2">
+        &nbsp;&nbsp;industry: 'construction',
+       </div>
+       <div class="text-gray-400 mb-2">&nbsp;&nbsp;revenue: 500000,</div>
+       <div class="text-gray-400 mb-2">&nbsp;&nbsp;employees: 15</div>
+       <div class="text-gray-400 mb-2">});</div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- Compliance Section -->
+  <section id="compliance-section" class="py-20 bg-white">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      Built for Compliance From Day One
+     </h2>
+     <p class="text-xl text-gray-600">
+      SOC 2 and HIPAA-ready infrastructure ensures your applications stay secure
+     </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+     <div class="bg-gray-50 rounded-xl p-8 text-center">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-6"
+      >
+       <i class="fa-solid fa-shield-alt text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">SOC 2 Type II</h3>
+      <p class="text-gray-600">
+       Independently audited security controls and data protection standards.
+      </p>
+     </div>
+     <div class="bg-gray-50 rounded-xl p-8 text-center">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-6"
+      >
+       <i class="fa-solid fa-lock text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">
+       End-to-End Encryption
+      </h3>
+      <p class="text-gray-600">
+       All data encrypted in transit and at rest with industry-standard
+       protocols.
+      </p>
+     </div>
+     <div class="bg-gray-50 rounded-xl p-8 text-center">
+      <div
+       class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-6"
+      >
+       <i class="fa-solid fa-plus text-white text-xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">HIPAA Ready</h3>
+      <p class="text-gray-600">
+       Healthcare-grade security for sensitive personal and business
+       information.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials-section" class="py-20 bg-gray-50">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      Built for Developers, Trusted by Platforms
+     </h2>
+     <p class="text-xl text-gray-600">
+      See what teams are building with GigEasy
+     </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+     <div class="bg-white rounded-xl p-8 shadow-lg">
+      <div class="flex items-center mb-6">
+       <img
+        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg"
+        alt="Developer Avatar"
+        class="w-12 h-12 rounded-full mr-4"
+       />
+       <div>
+        <div class="font-semibold text-gray-900">Sarah Chen</div>
+        <div class="text-sm text-gray-600">CTO, ContractorHelp</div>
+       </div>
+      </div>
+      <p class="text-gray-700 italic">
+       "GigEasy's API made it simple to embed insurance into our contractor
+       onboarding flow. What used to take weeks now happens in real-time."
+      </p>
+     </div>
+     <div class="bg-white rounded-xl p-8 shadow-lg">
+      <div class="flex items-center mb-6">
+       <img
+        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg"
+        alt="Developer Avatar"
+        class="w-12 h-12 rounded-full mr-4"
+       />
+       <div>
+        <div class="font-semibold text-gray-900">Marian Rodriguez</div>
+        <div class="text-sm text-gray-600">Lead Engineer, BrokerTech</div>
+       </div>
+      </div>
+      <p class="text-gray-700 italic">
+       "Clean integration. We were live in days, not weeks. The documentation is
+       excellent and the sandbox environment is incredibly realistic."
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="cta-section" class="py-20 bg-primary">
+   <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-white mb-4">
+     Build With GigEasy's API Today
+    </h2>
+    <p class="text-xl text-blue-100 mb-8">
+     Start embedding insurance into your product in minutes. Join the developers
+     already building with GigEasy.
+    </p>
+    <button
+     id="join-waitlist-cta"
+     class="bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition"
+    >
+     Join the Waitlist
+    </button>
+   </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-gray-900 text-white py-12">
+   <div class="container mx-auto px-6">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+     <div>
+      <div class="text-2xl font-bold mb-4">GigEasy</div>
+      <p class="text-gray-400">Insurance APIs for developers</p>
+     </div>
+     <div>
+      <h3 class="font-semibold mb-4">Product</h3>
+      <div class="space-y-2">
+       <div class="text-gray-400 hover:text-white cursor-pointer">Brokers</div>
+       <div class="text-gray-400 hover:text-white cursor-pointer">
+        Developers
+       </div>
+       <div class="text-gray-400 hover:text-white cursor-pointer">
+        API Documentation
+       </div>
+      </div>
+     </div>
+     <div>
+      <h3 class="font-semibold mb-4">Company</h3>
+      <div class="space-y-2">
+       <div class="text-gray-400 hover:text-white cursor-pointer">
+        Contact Us
+       </div>
+       <div class="text-gray-400 hover:text-white cursor-pointer">
+        Licensing
+       </div>
+       <div class="text-gray-400 hover:text-white cursor-pointer">Terms</div>
+       <div class="text-gray-400 hover:text-white cursor-pointer">Privacy</div>
+      </div>
+     </div>
+     <div>
+      <h3 class="font-semibold mb-4">Connect</h3>
+      <div class="flex space-x-4">
+       <span class="text-gray-400 hover:text-white cursor-pointer">
+        <i class="fa-brands fa-linkedin text-xl"></i>
+       </span>
+       <span class="text-gray-400 hover:text-white cursor-pointer">
+        <i class="fa-brands fa-twitter text-xl"></i>
+       </span>
+      </div>
+     </div>
+    </div>
+    <div
+     class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
+    >
+     <div class="text-gray-400 text-sm">
+      © 2024 GigEasy. All rights reserved.
+     </div>
+     <div class="text-gray-400 hover:text-white cursor-pointer text-sm">
+      Privacy Policy
+     </div>
+    </div>
+   </div>
+  </footer>
+
+  <!-- Waitlist Modal -->
+  <div
+   id="waitlist-modal"
+   class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden transition-opacity duration-300"
+  >
+   <div class="flex items-center justify-center min-h-screen p-4">
+    <div
+     class="bg-white rounded-xl shadow-2xl max-w-lg w-full p-8 transform transition-all duration-300 scale-95 opacity-0"
+     id="modal-content"
+    >
+     <div class="flex justify-between items-center mb-6">
+      <h3 class="text-2xl font-bold text-gray-900">Join the API Waitlist</h3>
+      <button id="close-modal" class="text-gray-400 hover:text-gray-600">
+       <i class="fa-solid fa-times text-xl"></i>
+      </button>
+     </div>
+
+     <form
+      name="waitlist"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+     >
+      <input type="hidden" name="form-name" value="waitlist" />
+      <p class="hidden">
+       <label
+        >Don't fill this out if you're human: <input name="bot-field"
+       /></label>
+      </p>
+
+      <div class="space-y-4">
+       <div>
+        <label
+         for="firstName"
+         class="block text-sm font-medium text-gray-700 mb-2"
+         >First Name</label
+        >
+        <input
+         type="text"
+         id="firstName"
+         name="firstName"
+         required
+         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+         placeholder="Enter your first name"
+        />
+       </div>
+
+       <div>
+        <label
+         for="lastName"
+         class="block text-sm font-medium text-gray-700 mb-2"
+         >Last Name</label
+        >
+        <input
+         type="text"
+         id="lastName"
+         name="lastName"
+         required
+         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+         placeholder="Enter your last name"
+        />
+       </div>
+
+       <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-2"
+         >Email Address</label
+        >
+        <input
+         type="email"
+         id="email"
+         name="email"
+         required
+         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+         placeholder="Enter your email address"
+        />
+       </div>
+
+       <div>
+        <label
+         for="apiUsage"
+         class="block text-sm font-medium text-gray-700 mb-2"
+         >How would you like to use our API?
+         <span class="text-gray-500 text-sm">(Optional)</span></label
+        >
+        <textarea
+         id="apiUsage"
+         name="apiUsage"
+         rows="4"
+         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+         placeholder="Tell us about your project and how you plan to integrate our insurance API..."
+        ></textarea>
+       </div>
+      </div>
+
+      <div class="flex gap-3 mt-8">
+       <button
+        type="button"
+        id="cancel-modal"
+        class="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition"
+       >
+        Cancel
+       </button>
+       <button
+        type="submit"
+        class="flex-1 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+       >
+        Join Waitlist
+       </button>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+   // Waitlist Modal Functionality
+   document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("waitlist-modal");
+    const modalContent = document.getElementById("modal-content");
+    const openButtons = document.querySelectorAll(
+     "#join-waitlist-header, #join-waitlist-hero, #join-waitlist-cta"
+    );
+    const closeButton = document.getElementById("close-modal");
+    const cancelButton = document.getElementById("cancel-modal");
+
+    // Open modal
+    openButtons.forEach((button) => {
+     button.addEventListener("click", function () {
+      modal.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+
+      // Trigger animation after a brief delay to ensure the modal is visible
+      setTimeout(() => {
+       modalContent.classList.remove("scale-95", "opacity-0");
+       modalContent.classList.add("scale-100", "opacity-100");
+      }, 10);
+     });
+    });
+
+    // Close modal
+    function closeModal() {
+     modalContent.classList.remove("scale-100", "opacity-100");
+     modalContent.classList.add("scale-95", "opacity-0");
+
+     setTimeout(() => {
+      modal.classList.add("hidden");
+      document.body.style.overflow = "auto";
+     }, 300); // Match the transition duration
+    }
+
+    closeButton.addEventListener("click", closeModal);
+    cancelButton.addEventListener("click", closeModal);
+
+    // Close modal when clicking outside
+    modal.addEventListener("click", function (e) {
+     if (e.target === modal) {
+      closeModal();
+     }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener("keydown", function (e) {
+     if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+      closeModal();
+     }
+    });
+   });
+  </script>
+ </body>
+</html>
