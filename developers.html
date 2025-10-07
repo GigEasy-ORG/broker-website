@@ -724,19 +724,7 @@
       </button>
      </div>
 
-     <form
-      name="waitlist"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-     >
-      <input type="hidden" name="form-name" value="waitlist" />
-      <p class="hidden">
-       <label
-        >Don't fill this out if you're human: <input name="bot-field"
-       /></label>
-      </p>
-
+     <form id="waitlist-form">
       <div class="space-y-4">
        <div>
         <label
@@ -847,6 +835,17 @@
      });
     });
 
+    // Close modal function
+    function closeModal() {
+     modalContent.classList.remove("scale-100", "opacity-100");
+     modalContent.classList.add("scale-95", "opacity-0");
+
+     setTimeout(() => {
+      modal.classList.add("hidden");
+      document.body.style.overflow = "auto";
+     }, 300); // Match the transition duration
+    }
+
     // Waitlist Form Handler
     const waitlistForm = document.getElementById("waitlist-form");
 
@@ -915,17 +914,6 @@
       }, 3000);
      }
     });
-
-    // Close modal
-    function closeModal() {
-     modalContent.classList.remove("scale-100", "opacity-100");
-     modalContent.classList.add("scale-95", "opacity-0");
-
-     setTimeout(() => {
-      modal.classList.add("hidden");
-      document.body.style.overflow = "auto";
-     }, 300); // Match the transition duration
-    }
 
     closeButton.addEventListener("click", closeModal);
     cancelButton.addEventListener("click", closeModal);
