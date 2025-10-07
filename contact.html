@@ -348,15 +348,19 @@
      submitButton.disabled = true;
 
      try {
-      // Send to Google Apps Script
+      // Send to Google Apps Script using FormData (works better with CORS)
+      const formDataToSend = new FormData();
+      formDataToSend.append("fullName", data.fullName);
+      formDataToSend.append("email", data.email);
+      formDataToSend.append("company", data.company || "");
+      formDataToSend.append("role", data.role);
+      formDataToSend.append("message", data.message);
+
       const response = await fetch(
        "https://script.google.com/macros/s/AKfycbzeYryXggD-x_dFbjZKrSLTcd12SD5zaqSdcG9G3EnIic33vOMoxElUF3Gkj5f7O8OO/exec",
        {
         method: "POST",
-        headers: {
-         "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+        body: formDataToSend,
        }
       );
 
